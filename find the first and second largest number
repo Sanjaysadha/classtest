@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+	int n,i,lar1,lar2,temp;
+	printf("Enter the number :");
+	scanf("%d",&n);
+	int array[n];
+	printf("Enter the elements : \n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&array[i]);
+	}
+	printf("The array element are :\n" );
+
+	for(i=0;i<n;i++)
+	{
+		printf("%d\t",array[i]);
+	}
+	lar1=array[0];
+	lar2=array[1];
+	if(lar2>lar1){
+		temp=lar1;
+		lar1=lar2;
+		lar2=temp;
+	}
+	printf("\n");
+	for(i=2;i<n;i++)
+	{
+		if(array[i]>lar1){
+			lar2=lar1;
+			lar1=array[i];
+		}
+		else if(array[i]>lar2 && array[i]!=lar1){
+			lar2=array[i];
+		}
+			
+	}
+	printf("the largest element in the given number is : %d\n",lar1);
+	printf("The second largest element in the given number is : %d\n",lar2);
+	
+	return 0;
+}
